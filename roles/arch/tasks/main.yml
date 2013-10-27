@@ -14,6 +14,15 @@
 - name: Install Arch's sudo implementation
   pacman: name=sudo state=installed
 
+- name: Install alsa, jack, qjackctl, and alsa-utils
+  pacman: name=alsa state=installed
+  pacman: name=jack state=installed
+  pacman: name=qjackctl state=installed
+  pacman: name=alsa-utils state=installed
+
+- name: Install tree
+  pacman: name=tree state=installed
+
 - name: Install the X Windowing System and startx
   pacman: name=xorg state=installed
   pacman: name=xorg-server state=installed
@@ -28,3 +37,8 @@
   pacman: name=ttf-inconsolata state=installed
   pacman: name=ttf-sanazami state=installed
   pacman: name=ttf-symbola state=installed
+
+- name: Install postgresql, mariadb, and redis
+  pacman: name=postgresql state=installed
+  pacman: name=mariadb state=installed
+  pacman: name=redis state=installed
