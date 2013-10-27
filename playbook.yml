@@ -1,0 +1,22 @@
+---
+- hosts: home
+  connection: local
+
+  tasks:
+    - name: Install build-essential and gcc
+      pacman: name=build-essential state=installed
+      pacman: name=gcc state=installed
+
+    - name: Install the X Windowing System and startx
+      pacman: name=xorg state=installed
+      pacman: name=xorg-server state=installed
+      pacman: name=xorg-xinit state=installed
+
+    - name: Install xmonad and dmenu
+      pacman: name=xmonad state=installed
+      pacman: name=dmenu state=installed
+
+    - name: Install fonts
+      pacman: name=ttf-inconsolata state=installed
+      pacman: name=ttf-sanazami state=installed
+      pacman: name=ttf-symbola state=installed
