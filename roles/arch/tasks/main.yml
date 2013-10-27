@@ -73,7 +73,7 @@
 - name: Download aurinstaller
   command: wget https://raw.github.com/umby213/aurinstaller/master/aurinstaller 
 
-- name: Provision aurinstaller
+- name: Grant executable permissions aurinstaller
   command: sudo chmod a+x aurinstaller 
 
 - name: Install aurinstaller
