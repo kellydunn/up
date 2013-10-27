@@ -7,6 +7,14 @@
       pacman: name=build-essential state=installed
       pacman: name=gcc state=installed
 
+    - name: Install net-utils, dialog, openssh
+      pacman: name=net-utils state=installed
+      pacman: name=dialog state=installed
+      pacman: name=openssh state=installed
+
+    - name: Install git
+      pacman: name=git state=installed
+
     - name: Install the X Windowing System and startx
       pacman: name=xorg state=installed
       pacman: name=xorg-server state=installed
