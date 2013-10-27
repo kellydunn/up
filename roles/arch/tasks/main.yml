@@ -38,7 +38,11 @@
   pacman: name=ttf-sanazami state=installed
   pacman: name=ttf-symbola state=installed
 
-- name: Install postgresql, mariadb, and redis
+- name: Install postgresql
   pacman: name=postgresql state=installed
+
+- name: Install mysql / mariadb
   pacman: name=mariadb state=installed
+
+- name: Install redis-server
   pacman: name=redis state=installed
