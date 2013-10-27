@@ -1,12 +1,22 @@
-- name: Install build-essential, bash, and gcc
+- name: Install build-essential
   pacman: name=build-essential state=installed
+
+- name: Install bash
   pacman: name=bash state=installed
+
+- name: Install gcc
   pacman: name=gcc state=installed
 
-- name: Install net-utils, dialog, openssh
+- name: Install net-utils
   pacman: name=net-utils state=installed
+
+- name: Install dialog
   pacman: name=dialog state=installed
+
+- name: Install openssh
   pacman: name=openssh state=installed
+
+- name: Install wget
   pacman: name=wget state=installed
 
 - name: Install git
@@ -15,28 +25,46 @@
 - name: Install Arch's sudo implementation
   pacman: name=sudo state=installed
 
-- name: Install alsa, jack, qjackctl, and alsa-utils
+- name: Install alsa
   pacman: name=alsa state=installed
+
+- name: Install jack
   pacman: name=jack state=installed
+
+- name: Install qjackctl
   pacman: name=qjackctl state=installed
+
+- name: Install alsa-utils
   pacman: name=alsa-utils state=installed
 
 - name: Install tree
   pacman: name=tree state=installed
 
-- name: Install the X Windowing System and startx
+- name: Install xorg
   pacman: name=xorg state=installed
+
+- name: Install xorg-server
   pacman: name=xorg-server state=installed
+
+- name: Install xorg-xinit
   pacman: name=xorg-xinit state=installed
 
-- name: Install xmonad, dmenu, and xmobar
+- name: Install xmonad
   pacman: name=xmonad state=installed
+
+- name: Install dmenu
   pacman: name=dmenu state=installed
+
+- name: Install xmobar
   pacman: name=xmobar state=installed
 
-- name: Install fonts
+- name: Install inconsolata
   pacman: name=ttf-inconsolata state=installed
+
+- name: Install sanazami
   pacman: name=ttf-sanazami state=installed
+
+- name: Install symbola
   pacman: name=ttf-symbola state=installed
 
 - name: Install postgresql
