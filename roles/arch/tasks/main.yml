@@ -7,6 +7,7 @@
   pacman: name=net-utils state=installed
   pacman: name=dialog state=installed
   pacman: name=openssh state=installed
+  pacman: name=wget state=installed
 
 - name: Install git
   pacman: name=git state=installed
@@ -46,3 +47,12 @@
 
 - name: Install redis-server
   pacman: name=redis state=installed
+
+- name: Download aurinstaller
+  command: wget https://raw.github.com/umby213/aurinstaller/master/aurinstaller 
+
+- name: Provision aurinstaller
+  command: sudo chmod a+x aurinstaller 
+
+- name: Install aurinstaller
+  command: sudo mv aurinstaller /usr/bin/
