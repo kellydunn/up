@@ -1,14 +1,11 @@
-- name: Install build-essential
-  pacman: name=build-essential state=installed
-
 - name: Install bash
   pacman: name=bash state=installed
 
 - name: Install gcc
   pacman: name=gcc state=installed
 
-- name: Install net-utils
-  pacman: name=net-utils state=installed
+- name: Install net-tools
+  pacman: name=net-tools state=installed
 
 - name: Install dialog
   pacman: name=dialog state=installed
@@ -24,9 +21,6 @@
 
 - name: Install Arch's sudo implementation
   pacman: name=sudo state=installed
-
-- name: Install alsa
-  pacman: name=alsa state=installed
 
 - name: Install jack
   pacman: name=jack state=installed
@@ -61,8 +55,8 @@
 - name: Install inconsolata
   pacman: name=ttf-inconsolata state=installed
 
-- name: Install sanazami
-  pacman: name=ttf-sanazami state=installed
+- name: Install hanazono
+  pacman: name=ttf-hanazono state=installed
 
 - name: Install symbola
   pacman: name=ttf-symbola state=installed
