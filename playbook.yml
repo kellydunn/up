@@ -20,9 +20,10 @@
       pacman: name=xorg-server state=installed
       pacman: name=xorg-xinit state=installed
 
-    - name: Install xmonad and dmenu
+    - name: Install xmonad, dmenu, and xmobar
       pacman: name=xmonad state=installed
       pacman: name=dmenu state=installed
+      pacman: name=xmobar state=installed
 
     - name: Install fonts
       pacman: name=ttf-inconsolata state=installed
