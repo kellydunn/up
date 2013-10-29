@@ -13,11 +13,20 @@
 - name: Install openssh
   pacman: name=openssh state=installed
 
+- name: Install libxml2
+  pacman: name=libxml2 state=installed
+
+- name: Install libxslt
+  pacman: name=libxslt state=installed
+
 - name: Install wget
   pacman: name=wget state=installed
 
 - name: Install git
   pacman: name=git state=installed
+
+- name: Install git-core
+  pacman: name=git-core state=installed
 
 - name: Install Arch's sudo implementation
   pacman: name=sudo state=installed
@@ -78,3 +87,7 @@
 
 - name: Install aurinstaller
   command: sudo mv aurinstaller /usr/bin/
+
+- name: Install git-flow
+  sudo: False
+  command: aurinstaller -S gitflow

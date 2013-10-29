@@ -1,2 +1,8 @@
+- name: Download gvm
+  command: wget https://raw.github.com/moovweb/gvm/master/binscripts/gvm-installer
+
+- name: Change permissions of gvm
+  command: sudo chmod 755 ./gvm-installer
+
 - name: Install gvm
-  command: sh install.sh
+  command: su kelly && ./gvm-installer

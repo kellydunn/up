@@ -1,5 +1,7 @@
 - hosts: home
   connection: local
+  sudo: yes
+  user: kelly
 
   roles:
     - arch
