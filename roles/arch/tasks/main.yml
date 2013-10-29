@@ -117,3 +117,22 @@
 - name: Install fuse-exfat
   pacman: name=fuse-exfat state=installed
 
+- name: Install fakeroot
+  pacman: name=fakeroot state=installed
+
+- name: Install libyaml
+  pacman: name=libyaml state=installed
+
+- name: Install python2-pyqt
+  pacman: name=python2-pyqt state=installed
+
+- name: Install python-keyring
+  sudo: False
+  command: aurinstaller -S python2-keyring
+
+- name: Install python2-notify
+  pacman: name=python2-notify
+
+- name: Install snakefire-git
+  sudo: False
+  command: aurinstaller -S snakefire-git
