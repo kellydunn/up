@@ -17,7 +17,7 @@ Provisioning scripts for my personal and work machines.  The intent of this proj
 ```
 git clone git@github.com:kellydunn/up
 cd up
-ansible-playbook dev.yml -i inventory.yml
+ansible-playbook dev.yml -i inventory.yml -K
 ```
 
 #status
