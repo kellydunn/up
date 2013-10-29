@@ -76,6 +76,9 @@
 - name: Install mysql / mariadb
   pacman: name=mariadb state=installed
 
+- name: libmysqlclient
+  pacman: name=libmysqlclient state=installed
+
 - name: Install redis-server
   pacman: name=redis state=installed
 
@@ -91,3 +94,10 @@
 - name: Install git-flow
   sudo: False
   command: aurinstaller -S gitflow
+
+- name: Install virtualbox
+  pacman: name=virtualbox state=installed
+
+- name: Install libsasl
+  pacman: name=libsasl state=installed
+
