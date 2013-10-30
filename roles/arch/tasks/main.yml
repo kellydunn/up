@@ -136,3 +136,23 @@
 - name: Install snakefire-git
   sudo: False
   command: aurinstaller -S snakefire-git
+
+- name: Install jdk7-openjdk
+  pacman: name=jdk7-openjdk state=installed
+
+- name: Install qt5-js-backend
+  pacman: name=qt5-jsbackend state=installed
+
+- name: Install nodejs
+  pacman: name=nodejs state=installed
+
+- name: Install v8-dev
+  sudo: False
+  command: aurinstaller -S v8-dev
+
+- name: Install solr
+  sudo: False
+  command: aurinstaller -S solr
+
+- name: Install memcached
+  pacman: name=memcached state=installed
