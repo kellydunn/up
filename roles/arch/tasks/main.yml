@@ -55,6 +55,9 @@
 - name: Install xmonad
   pacman: name=xmonad state=installed
 
+- name: Install xmonad-contrib
+  pacman: name=xmonad-contrib state=installed
+
 - name: Install dmenu
   pacman: name=dmenu state=installed
 
