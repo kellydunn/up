@@ -160,3 +160,6 @@
 
 - name: Install flashplugin
   pacman: name=flashplugin state=installed
+
+- name: Install clang
+  pacman: name=clang state=installed
