@@ -157,3 +157,6 @@
 
 - name: Install chromium
   pacman: name=chromium state=installed
+
+- name: Install flashplugin
+  pacman: name=flashplugin state=installed
