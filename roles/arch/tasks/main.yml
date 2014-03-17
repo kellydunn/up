@@ -106,10 +106,6 @@
 - name: Install aurinstaller
   command: sudo mv aurinstaller /usr/bin/
 
-- name: Install git-flow
-  sudo: False
-  command: aurinstaller -S gitflow
-
 - name: Install vagrant
   sudo: False
   command: aurinstaller -S vagrant
@@ -133,15 +129,8 @@
 - name: Install python2-notify
   pacman: name=python2-notify
 
-- name: Install snakefire-git
-  sudo: False
-  command: aurinstaller -S snakefire-git
-
 - name: Install jdk7-openjdk
   pacman: name=jdk7-openjdk state=installed
-
-- name: Install qt5-js-backend
-  pacman: name=qt5-jsbackend state=installed
 
 - name: Install nodejs
   pacman: name=nodejs state=installed
@@ -156,3 +145,12 @@
 
 - name: Install memcached
   pacman: name=memcached state=installed
+
+- name: Install emacs
+  pacman: name=emacs state=installed
+
+- name: Install xterm
+  pacman: name=xterm state=installed
+
+- name: Install chromium
+  pacman: name=chromium state=installed
