@@ -109,10 +109,6 @@
 - name: Install aurinstaller
   command: sudo mv aurinstaller /usr/bin/
 
-- name: Install vagrant
-  sudo: False
-  command: aurinstaller -S vagrant
-
 - name: Install fuse-exfat
   pacman: name=fuse-exfat state=installed
 
@@ -163,3 +159,17 @@
 
 - name: Install clang
   pacman: name=clang state=installed
+
+- name: Install make
+  pacman: name=make state=installed
+
+- name: Install ruby
+  pacman: name=ruby state=installed
+
+- name: Install vagrant
+  sudo: False
+  command: aurinstaller -S vagrant-git
+
+- name: Install chruby
+  sudo: False
+  command: aurinstaller -S chruby
