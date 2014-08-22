@@ -173,3 +173,6 @@
 - name: Install chruby
   sudo: False
   command: aurinstaller -S chruby
+
+- name: Install tmux
+  pacman: name=tmux state=installed
