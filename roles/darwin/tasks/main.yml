@@ -16,6 +16,19 @@
   homebrew: name=emacs state=present install_options=cocoa
   sudo: False
 
+- name: Install cask
+  homebrew: name=cask state=present
+  sudo: False
+
+- name: Install cask deps
+  shell: cask
+  args:
+    chdir: "{{ lookup('env','HOME') + '/.emacs.d/' }}"
+
 - name: Install git
   homebrew: name=git state=present
+  sudo: False
+
+- name: Install tmux
+  homebrew: name=tmux state=present
   sudo: False
