@@ -1,3 +1,13 @@
+- name: Check homebrew presence
+  shell: which brew
+  register: homebrew_installed
+  failed_when: False
+
+- name: Install homebrew
+  shell: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  sudo: False
+  when: homebrew_installed.rc == 1
+
 - name: Update homebrew
   homebrew: update_homebrew=yes upgrade_all=yes
   sudo: False
