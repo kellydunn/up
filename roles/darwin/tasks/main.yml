@@ -15,3 +15,7 @@
 - name: Install emacs
   homebrew: name=emacs state=present install_options=cocoa
   sudo: False
+
+- name: Install git
+  homebrew: name=git state=present
+  sudo: False
