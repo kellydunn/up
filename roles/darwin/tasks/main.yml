@@ -1,0 +1,7 @@
+- name: Update homebrew
+  homebrew: update_homebrew=yes upgrade_all=yes
+  sudo: False
+
+- name: Install emacs
+  homebrew: name=emacs state=present install_options=cocoa
+  sudo: False
