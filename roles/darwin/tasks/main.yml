@@ -44,3 +44,18 @@
   homebrew_cask: name=virtualbox state=present
   sudo: False
 
+- name: Install gpg
+  homebrew: name=gpg state=present
+  sudo: False
+
+- name: Install rvm
+  shell: curl -sSL https://get.rvm.io | bash -s stable
+  sudo: False
+
+- name: Install mysql
+  homebrew: name=mysql state=present
+  sudo: False
+
+- name: Install cmake
+  homebrew: name=cmake state=present
+  sudo: False
