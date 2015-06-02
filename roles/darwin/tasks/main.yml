@@ -59,3 +59,7 @@
 - name: Install cmake
   homebrew: name=cmake state=present
   sudo: False
+
+- name: Install qt
+  homebrew: name=qt state=present
+  sudo: False
