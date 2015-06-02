@@ -8,6 +8,10 @@
   sudo: False
   when: homebrew_installed.rc == 1
 
+- name: Install brew-cask
+  homebrew: name=brew-cask state=present
+  sudo: False
+
 - name: Update homebrew
   homebrew: update_homebrew=yes upgrade_all=yes
   sudo: False
@@ -19,6 +23,9 @@
 - name: Install cask
   homebrew: name=cask state=present
   sudo: False
+
+- name: Create ~/.emacs.d
+  file: path="{{ lookup('env','HOME') + '/.emacs.d/' }}" state=directory
 
 - name: Install cask deps
   shell: cask
@@ -33,9 +40,7 @@
   homebrew: name=tmux state=present
   sudo: False
 
-- name: Create Key Binding Folder
-  file: path="{{ lookup('env', 'HOME') + 'Library/KeyBindings'}}" state=directory recurse=yes
+- name: Install VirtualBox
+  homebrew_cask: name=virtualbox state=present
+  sudo: False
 
-- name: Override Default Keybindings
-  copy: src=DefaultKeyBinding.dict dest= "{{ lookup('env', 'HOME') + 'Library/KeyBindings/DefaultKeyBinding.dict'}}"
-  
