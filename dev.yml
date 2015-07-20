@@ -2,6 +2,7 @@
   connection: local
   sudo: yes
   user: kelly
+  remote_user: kelly
 
   roles:
-    - arch
+    - darwin

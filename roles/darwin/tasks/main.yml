@@ -1,0 +1,65 @@
+- name: Check homebrew presence
+  shell: which brew
+  register: homebrew_installed
+  failed_when: False
+
+- name: Install homebrew
+  shell: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  sudo: False
+  when: homebrew_installed.rc == 1
+
+- name: Install brew-cask
+  homebrew: name=brew-cask state=present
+  sudo: False
+
+- name: Update homebrew
+  homebrew: update_homebrew=yes upgrade_all=yes
+  sudo: False
+
+- name: Install emacs
+  homebrew: name=emacs state=present install_options=cocoa
+  sudo: False
+
+- name: Install cask
+  homebrew: name=cask state=present
+  sudo: False
+
+- name: Create ~/.emacs.d
+  file: path="{{ lookup('env','HOME') + '/.emacs.d/' }}" state=directory
+
+- name: Install cask deps
+  shell: cask
+  args:
+    chdir: "{{ lookup('env','HOME') + '/.emacs.d/' }}"
+
+- name: Install git
+  homebrew: name=git state=present
+  sudo: False
+
+- name: Install tmux
+  homebrew: name=tmux state=present
+  sudo: False
+
+- name: Install VirtualBox
+  homebrew_cask: name=virtualbox state=present
+  sudo: False
+
+- name: Install gpg
+  homebrew: name=gpg state=present
+  sudo: False
+
+- name: Install rvm
+  shell: curl -sSL https://get.rvm.io | bash -s stable
+  sudo: False
+
+- name: Install mysql
+  homebrew: name=mysql state=present
+  sudo: False
+
+- name: Install cmake
+  homebrew: name=cmake state=present
+  sudo: False
+
+- name: Install qt
+  homebrew: name=qt state=present
+  sudo: False
