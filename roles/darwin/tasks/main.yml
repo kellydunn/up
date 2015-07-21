@@ -75,3 +75,11 @@
 - name: Add to start group
   shell: pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
   sudo: False
+
+- name: Install vagrant
+  homebrew_cask: name=vagrant state=present
+  sudo: False
+
+- name: Install go
+  homebrew: name=go state=present
+  sudo: False
