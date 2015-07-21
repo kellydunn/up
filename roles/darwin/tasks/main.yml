@@ -8,12 +8,16 @@
   sudo: False
   when: homebrew_installed.rc == 1
 
-- name: Install brew-cask
-  homebrew: name=brew-cask state=present
-  sudo: False
-
 - name: Update homebrew
   homebrew: update_homebrew=yes upgrade_all=yes
+  sudo: False
+
+- name: Brew tap caskroom/cask
+  homebrew_tap: tap=caskroom/cask state=present
+  sudo: False 
+
+- name: Install brew-cask
+  homebrew: name=brew-cask state=present
   sudo: False
 
 - name: Install emacs
@@ -62,4 +66,12 @@
 
 - name: Install qt
   homebrew: name=qt state=present
+  sudo: False
+
+- name: Install PostgreSQL
+  homebrew: name=postgresql state=present
+  sudo: False
+
+- name: Add to start group
+  shell: pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
   sudo: False
