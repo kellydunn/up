@@ -67,3 +67,11 @@
 - name: Install qt
   homebrew: name=qt state=present
   sudo: False
+
+- name: Install PostgreSQL
+  homebrew: name=postgresql state=present
+  sudo: False
+
+- name: Add to start group
+  shell: pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+  sudo: False
